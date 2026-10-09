@@ -582,7 +582,7 @@ fn process_events(app: &mut App, state: &mut OculanteState, evt: Event) {
                 state.scroll_remainder += Vector2::new(x, y);
             }
             if !state.pointer_over_ui {
-                if app.keyboard.ctrl() {
+                if app.keyboard.ctrl() != state.persistent_settings.wheel_navigates {
                     // Change image to next/prev
                     // - map scroll-down == next, as that's the natural scrolling direction
                     if delta_y > 0.0 {

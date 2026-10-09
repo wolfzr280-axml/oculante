@@ -74,6 +74,8 @@ pub struct PersistentSettings {
     pub use_mipmaps: bool,
     pub fit_image_on_window_resize: bool,
     pub zoom_multiplier: f32,
+    /// Mouse wheel changes image, Ctrl + wheel zooms (instead of the other way round)
+    pub wheel_navigates: bool,
     /// Automatically scale/zoom the image to fit the frame
     pub auto_scale: bool,
     pub borderless: bool,
@@ -113,6 +115,7 @@ impl Default for PersistentSettings {
             use_mipmaps: true,
             fit_image_on_window_resize: false,
             zoom_multiplier: 1.0,
+            wheel_navigates: true,
             auto_scale: false,
             borderless: false,
             min_window_size: (100, 100),

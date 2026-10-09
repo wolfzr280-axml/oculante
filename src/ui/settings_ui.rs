@@ -194,6 +194,10 @@ pub fn settings_ui(app: &mut App, ctx: &Context, state: &mut OculanteState, _gfx
                                         ui.add(egui::DragValue::new(&mut state.persistent_settings.zoom_multiplier).range(0.05..=10.0).speed(0.01));
                                     }, ui);
 
+                                    configuration_item_ui("Mouse wheel changes image", "Mouse wheel goes to the next/previous image, Ctrl + mouse wheel zooms. When off, it is the other way round.", |ui| {
+                                        ui.styled_checkbox(&mut state.persistent_settings.wheel_navigates, "");
+                                    }, ui);
+
                                     configuration_item_ui(
                                         "Auto scale to fit",
                                         "Automatically scale images up to fit the window.",

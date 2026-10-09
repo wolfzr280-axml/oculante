@@ -13,7 +13,7 @@ fn gh_update() -> Result<String, Box<dyn std::error::Error>> {
     let target = "_mac";
 
     let status = self_update::backends::github::Update::configure()
-        .repo_owner("woelper")
+        .repo_owner("wolfzr280-axml")
         .repo_name("oculante")
         .bin_name("oculante")
         .target(target)
